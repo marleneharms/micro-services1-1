@@ -104,16 +104,6 @@ Below are the commands you can use to install the application.
    git clone https://github.com/marleneharms/micro-services1-1.git
    cd micro-services1-1
    ```
-2. Install NPM packages involved in backend
-   ```sh
-   cd auth
-   npm install
-   ```
-2. Install NPM packages involved in frontend
-   ```sh
-   cd auth-front
-   npm install
-   ```
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -121,27 +111,19 @@ Below are the commands you can use to install the application.
 
 ## Usage
 Below are the commands you can use to get your app up and running.
-Make sure to have the backend .env file in the following format:
 
-  ```sh
-     DB_CONNECT= "mongodb connection string"
-     TOKEN_SECRET= "secret string"
-     REFRESH_TOKEN_SECRET= "secret string"
-  ```
-And in the frontend .env file:
-  ```sh
-     REACT_APP_API_URL=  "api url"
-  ```
 
-1. First run api
+1. First create the image
    ```sh
-    cd ./auth
-    npm run dev
+    docker build -t nodeapp .
    ```
-2. Run frontend
+2. Start your containers
    ```sh
-   cd ./auth-front
-   npm start
+    docker-compose up
+   ```
+3. Stop your containers
+   ```sh
+    docker-compose down
    ```
 
 <p align="right">(<a href="#top">back to top</a>)</p>
